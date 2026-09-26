@@ -1,9 +1,0 @@
-services:
-  - type: web
-    name: video-narrator
-    runtime: docker
-    plan: free
-    healthCheckPath: /
-    envVars:
-      - key: WHISPER_MODEL
-        value: base.en

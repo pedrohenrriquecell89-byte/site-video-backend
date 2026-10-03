@@ -1,0 +1,2 @@
+# Optional/large runtime dependency. Enable in Docker only if the Render instance has enough RAM.
+whisperx==3.3.1

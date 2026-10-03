@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: narrated-video-api
+    runtime: docker
+    plan: free
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    envVars:
+      - key: CORS_ORIGINS
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_MODEL
+        value: meta-llama/llama-4-scout-17b-16e-instruct
+      - key: RETENTION_SECONDS
+        value: "3600"
+      - key: MAX_SCRIPT_WORDS
+        value: "12000"
+      - key: PIPER_MODEL
+        value: /opt/piper/en_US-hfc_male-medium.onnx
+      - key: ALIGNMENT_MODE
+        value: whisperx
+      - key: WHISPER_MODEL
+        value: tiny

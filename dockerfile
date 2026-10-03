@@ -28,6 +28,5 @@ ARG INSTALL_WHISPERX=false
 RUN if [ "$INSTALL_WHISPERX" = "true" ]; then pip install -r requirements-whisperx.txt; fi
 
 COPY app ./app
-COPY .env ./
 EXPOSE 10000
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "10000"]
